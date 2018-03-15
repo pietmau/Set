@@ -6,7 +6,10 @@ public class GameImpl: Game {
     public var remainingCards: [Card] = []
     public var matchedCards: [Card] = []
 
-    init() {
+    private let matcher: Matcher
+
+    init(matcher: Matcher) {
+        self.matcher = matcher
         remainingCards = Card.createAll()
         deal()
         deal()
@@ -15,7 +18,6 @@ public class GameImpl: Game {
     }
 
     public func deal() {
-        addToMatchedIfAppropriate()
         addCards()
         unselctCards()
     }
@@ -49,20 +51,45 @@ public class GameImpl: Game {
         selectedCards.removeAll()
     }
 
-    private func addToMatchedIfAppropriate() {
-        if (!isAMatch()) {
-            return
-        }
+    private func clearAndDeal(card: Card) {
         matchedCards.append(contentsOf: selectedCards)
+        clearIfNeededAndAppend(card: card)
     }
 
     private func isAMatch() -> Bool {
-        if (selectedCards.count != 3) {
-            return false
-        }
-        return true
+        return matcher.isAMatch(cards: selectedCards)
     }
 
     public func selectCard(at: Int) {
+        if (at < 0 && at >= dealtCards.count) {
+            return
+        }
+        let card: Card = dealtCards[at]!
+        if alreadySelected(element: card) {
+            return
+        }
+        if (isAMatch()) {
+            clearAndDeal(card: card)
+        } else {
+            clearIfNeededAndAppend(card: card)
+        }
+    }
+
+    private func alreadySelected(element: Card) -> Bool {
+        return selectedCards.contains(element)
+    }
+
+    private func clearIfNeededAndAppend(card: Card) {
+        if (moreThanThreeSelected()) {
+            selectedCards.removeAll()
+        }
+        selectedCards.append(card)
+    }
+
+    private func moreThanThreeSelected() -> Bool {
+        return selectedCards.count >= 3
+    }
+
+    class InvalidRange: Error {
     }
 }
