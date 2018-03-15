@@ -1,7 +1,8 @@
 import Foundation
 
-struct Card: Equatable {
-    static func ==(lhs: Card, rhs: Card) -> Bool {
+public struct Card: Equatable {
+
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
         if (lhs.number != rhs.number) {
             return false
         }
@@ -24,7 +25,7 @@ struct Card: Equatable {
     let shading: Shading
 
     init(number: Int, shape: Shape, color: Color, shading: Shading) {
-        assert(number <= 0 || number > 3, " Number must be >0 and <4, but was \(number)")
+        assert(number > 0 && number < 4, " Number must be >0 and <4, but was \(number)")
         self.number = number
         self.shape = shape
         self.color = color
@@ -45,6 +46,26 @@ struct Card: Equatable {
         }
         return cards
     }
+
+    public static func isAValidCard(card: Card) -> Bool {
+        if (card.number < 0) {
+            return false
+        }
+        if (card.number > 3) {
+            return false
+        }
+        if (card.color == nil) {
+            return false
+        }
+        if (card.shading == nil) {
+            return false
+        }
+        if (card.shape == nil) {
+            return false
+        }
+        return true
+    }
+
 }
 
 enum Shape {

@@ -1,21 +1,21 @@
 import Foundation
 
-class GameImpl: Game {
-    var dealtCards: [Card?] = []
-    var selectedCards: [Card] = []
-
-    private var remainingCards: [Card] = []
-    private var matchedCards: [Card] = []
+public class GameImpl: Game {
+    public var dealtCards: [Card?] = []
+    public var selectedCards: [Card] = []
+    public var remainingCards: [Card] = []
+    public var matchedCards: [Card] = []
 
     init() {
         remainingCards = Card.createAll()
         deal()
         deal()
         deal()
+        deal()
     }
 
-    func deal() {
-        addToIfIsaMatchMatchedCards()
+    public func deal() {
+        addToMatchedIfAppropriate()
         addCards()
         unselctCards()
     }
@@ -31,16 +31,13 @@ class GameImpl: Game {
                     dealtCards[index] = toBeDealt.removeFirst()
                 }
             }
-            if (toBeDealt.isEmpty) {
-                return
-            }
             dealtCards.append(contentsOf: toBeDealt)
         }
     }
 
     private func getThreeCards() -> [Card?]? {
         var result: [Card] = []
-        for index in 1...3 {
+        for _ in 1...3 {
             let rand = Int(arc4random_uniform(UInt32(remainingCards.count)))
             let card = remainingCards.remove(at: rand)
             result.append(card)
@@ -52,7 +49,7 @@ class GameImpl: Game {
         selectedCards.removeAll()
     }
 
-    private func addToIfIsaMatchMatchedCards() {
+    private func addToMatchedIfAppropriate() {
         if (!isAMatch()) {
             return
         }
@@ -60,9 +57,12 @@ class GameImpl: Game {
     }
 
     private func isAMatch() -> Bool {
-        fatalError("isAMatch() has not been implemented")
+        if (selectedCards.count != 3) {
+            return false
+        }
+        return true
     }
 
-    func selectCard(at: Int) {
+    public func selectCard(at: Int) {
     }
 }
