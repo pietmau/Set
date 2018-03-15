@@ -5,23 +5,22 @@ public class GameImpl: Game {
     public var selectedCards: [Card] = []
     public var remainingCards: [Card] = []
     public var matchedCards: [Card] = []
-
     private let matcher: Matcher
 
     init(matcher: Matcher) {
         self.matcher = matcher
         remainingCards = Card.createAll()
         for _ in 1...4 {
-            dealAndUnselect()
+            deal()
         }
     }
 
-    public func dealAndUnselect() {
-        deal()
+    public func deal() {
+        dealInternal()
         unselctCards()
     }
 
-    private func deal() {
+    private func dealInternal() {
         if var toBeDealt = getThreeCards() {
             for index in dealtCards.indices {
                 if (toBeDealt.isEmpty) {
@@ -50,10 +49,10 @@ public class GameImpl: Game {
         selectedCards.removeAll()
     }
 
-    private func clearAndDeal(card: Card) {
+    private func onIsAMatch(card: Card) {
         matchedCards.append(contentsOf: selectedCards)
-        clearIfNeededAndAppend(card: card)
-        deal()
+        onIsNotAMatch(card: card)
+        dealInternal()
     }
 
     private func isAMatch() -> Bool {
@@ -65,31 +64,50 @@ public class GameImpl: Game {
             return
         }
         let card: Card = dealtCards[at]!
-        if selectedCards.contains(card) {
-            onCardAlreadySelected(card)
+
+        if (selectedCards.count == 3) {
+            isAMatchOrNot(card: card)
+        } else if (selectedCards.count < 3) {
+            selectOrDeselect(card)
+        }
+    }
+
+    private func isAMatchOrNot(card: Card) {
+        if (selectedCards.contains(card)) {
             return
         }
         if (isAMatch()) {
-            clearAndDeal(card: card)
+            onIsAMatch(card: card)
         } else {
-            clearIfNeededAndAppend(card: card)
+            onIsNotAMatch(card: card)
         }
     }
 
-    private func onCardAlreadySelected(_ card: Card) {
-
+    private func selectOrDeselect(_ card: Card) {
+        if (selectedCards.contains(card)) {
+            deselect(card: card)
+        } else {
+            setSelected(card)
+        }
     }
 
-
-    private func clearIfNeededAndAppend(card: Card) {
-        if (moreThanThreeSelected()) {
-            unselctCards()
-        }
+    private func setSelected(_ card: Card) {
         selectedCards.append(card)
     }
 
-    private func moreThanThreeSelected() -> Bool {
-        return selectedCards.count >= 3
+    private func deselect(card: Card) {
+        let index = selectedCards.index(of: card)
+        selectedCards.remove(at: index!)
     }
+
+    private func onIsNotAMatch(card: Card) {
+        if (selectedCards.contains(card)) {
+            return
+        } else {
+            unselctCards()
+            selectedCards.append(card)
+        }
+    }
+
 
 }

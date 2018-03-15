@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db6ed8fe-2e68-49b4-9955-624e538927cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Set/impl/GameImpl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Set/impl/GameImpl.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetTests/DealTests.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SetTests/DealTests.swift" afterDir="false" />
-    </list>
+    <list default="true" id="db6ed8fe-2e68-49b4-9955-624e538927cb" name="Default" comment="" />
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/Set-abhbhuwvvrkzyeepoqjbtrqylhan/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +13,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_72B22A00-DD1C-4D99-988D-110E4F6F640A" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DealTests.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DealTests.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SetTests/DealTests.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state relative-caret-position="75">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -28,11 +25,29 @@
       <file leaf-file-name="SetTests.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SetTests/SetTests.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+            <state relative-caret-position="-61">
+              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameImpl.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Set/impl/GameImpl.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Set/game/Game.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -52,8 +67,8 @@
         <option value="$PROJECT_DIR$/Set/impl/MatcherImpl.swift" />
         <option value="$PROJECT_DIR$/SetTests/Positivematcher.swift" />
         <option value="$PROJECT_DIR$/SetTests/SetTests.swift" />
-        <option value="$PROJECT_DIR$/Set/game/Game.swift" />
         <option value="$PROJECT_DIR$/Set/impl/GameImpl.swift" />
+        <option value="$PROJECT_DIR$/Set/game/Game.swift" />
         <option value="$PROJECT_DIR$/SetTests/DealTests.swift" />
       </list>
     </option>
@@ -142,32 +157,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="XCTest.DealTests">
+  <component name="RunManager" selected="XCTest.SetTests">
     <configuration name="Set" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="Set" CONFIG_NAME="Debug" SCHEME_NAME="Set" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="Set" RUN_TARGET_NAME="Set" MAKE_ACTIVE="TRUE">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
     </configuration>
-    <configuration name="All in DealTests.swift" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="All in DealTests.swift" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_PATTERN="DealTests" TEST_MODE="PATTERN" />
-    <configuration name="All in SetTests.swift" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="All in SetTests.swift" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_PATTERN="SetTests" TEST_MODE="PATTERN" />
     <configuration name="DealTests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="DealTests" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="DealTests" TEST_MODE="SUITE_TEST" />
-    <configuration name="DealTests.test_match_and_deal" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="DealTests.test_match_and_deal" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="DealTests" TEST_METHOD="test_match_and_deal" TEST_MODE="SUITE_TEST" />
     <configuration name="SetTests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="SetTests" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="SetTests" TEST_MODE="SUITE_TEST" />
+    <configuration name="SetTests.test_ThreeeDSelected" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="SetTests.test_ThreeeDSelected" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="SetTests" TEST_METHOD="test_ThreeeDSelected" TEST_MODE="SUITE_TEST" />
+    <configuration name="SetTests.test_lessThanThreeAndDeSelect" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="SetTests.test_lessThanThreeAndDeSelect" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="SetTests" TEST_METHOD="test_lessThanThreeAndDeSelect" TEST_MODE="SUITE_TEST" />
+    <configuration name="SetTests.test_selectThreeAndSelectOther" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Set" TARGET_NAME="SetTests" CONFIG_NAME="Debug" SCHEME_NAME="SetTests.test_selectThreeAndSelectOther" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="SetTests" TEST_METHOD="test_selectThreeAndSelectOther" TEST_MODE="SUITE_TEST" />
     <list>
       <item itemvalue="Application.Set" />
       <item itemvalue="XCTest.SetTests" />
       <item itemvalue="XCTest.DealTests" />
-      <item itemvalue="XCTest.DealTests.test_match_and_deal" />
-      <item itemvalue="XCTest.All in SetTests.swift" />
-      <item itemvalue="XCTest.All in DealTests.swift" />
+      <item itemvalue="XCTest.SetTests.test_lessThanThreeAndDeSelect" />
+      <item itemvalue="XCTest.SetTests.test_selectThreeAndSelectOther" />
+      <item itemvalue="XCTest.SetTests.test_ThreeeDSelected" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="XCTest.DealTests" />
         <item itemvalue="XCTest.SetTests" />
-        <item itemvalue="XCTest.All in DealTests.swift" />
-        <item itemvalue="XCTest.All in SetTests.swift" />
-        <item itemvalue="XCTest.DealTests.test_match_and_deal" />
+        <item itemvalue="XCTest.DealTests" />
+        <item itemvalue="XCTest.SetTests.test_ThreeeDSelected" />
+        <item itemvalue="XCTest.SetTests.test_selectThreeAndSelectOther" />
+        <item itemvalue="XCTest.SetTests.test_lessThanThreeAndDeSelect" />
       </list>
     </recent_temporary>
   </component>
@@ -184,60 +199,61 @@
       <workItem from="1520955308668" duration="2813000" />
       <workItem from="1521038546493" duration="9805000" />
       <workItem from="1521105599609" duration="19892000" />
-      <workItem from="1521133022921" duration="1055000" />
+      <workItem from="1521133022921" duration="8049000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DealTests - 2018.03.15 at 16h 39m 33s.xml">
-      <configuration name="DealTests" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="DealTests_test_match_and_deal - 2018.03.15 at 16h 41m 38s.xml">
-      <configuration name="DealTests.test_match_and_deal" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="DealTests_test_match_and_deal - 2018.03.15 at 16h 41m 58s.xml">
-      <configuration name="DealTests.test_match_and_deal" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="SetTests - 2018.03.15 at 16h 50m 20s.xml">
+    <history-entry file="SetTests - 2018.03.15 at 18h 26m 50s.xml">
       <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
     </history-entry>
-    <history-entry file="DealTests - 2018.03.15 at 16h 50m 28s.xml">
-      <configuration name="DealTests" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="All_in_SetTests_swift - 2018.03.15 at 16h 50m 45s.xml">
-      <configuration name="All in SetTests.swift" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="All_in_DealTests_swift - 2018.03.15 at 16h 51m 32s.xml">
-      <configuration name="All in DealTests.swift" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="DealTests - 2018.03.15 at 16h 58m 25s.xml">
-      <configuration name="DealTests" configurationId="OCUnitRunConfiguration" />
-    </history-entry>
-    <history-entry file="SetTests - 2018.03.15 at 17h 15m 24s.xml">
+    <history-entry file="SetTests - 2018.03.15 at 18h 31m 19s.xml">
       <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
     </history-entry>
-    <history-entry file="DealTests - 2018.03.15 at 17h 15m 32s.xml">
+    <history-entry file="SetTests - 2018.03.15 at 18h 32m 36s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests - 2018.03.15 at 18h 33m 09s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests - 2018.03.15 at 18h 38m 09s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests_test_ThreeeDSelected - 2018.03.15 at 18h 42m 37s.xml">
+      <configuration name="SetTests.test_ThreeeDSelected" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests - 2018.03.15 at 18h 43m 31s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests - 2018.03.15 at 18h 44m 27s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="DealTests - 2018.03.15 at 18h 49m 58s.xml">
       <configuration name="DealTests" configurationId="OCUnitRunConfiguration" />
+    </history-entry>
+    <history-entry file="SetTests - 2018.03.15 at 18h 50m 05s.xml">
+      <configuration name="SetTests" configurationId="OCUnitRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33565000" />
+    <option name="totallyTimeSpent" value="40559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="815" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18680556" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32793522" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32882273" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38326585" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34817815" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5886333" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18680556" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.54520917" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,7 +261,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,31 +274,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/SetTests/SetTests.swift</url>
-          <line>91</line>
-          <option name="timeStamp" value="5" />
+          <line>128</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Set/impl/GameImpl.swift</url>
-          <line>53</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Set/impl/GameImpl.swift</url>
-          <line>63</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/SetTests/DealTests.swift</url>
-          <line>30</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Set/impl/GameImpl.swift</url>
-          <line>84</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/SetTests/SetTests.swift</url>
+          <line>147</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -396,34 +399,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Set/game/Game.swift">
+    <entry file="file://$PROJECT_DIR$/SetTests/DealTests.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="75">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Set/impl/GameImpl.swift">
+    <entry file="file://$PROJECT_DIR$/Set/game/Game.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="72" column="36" lean-forward="true" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+        <state relative-caret-position="120">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SetTests/SetTests.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+        <state relative-caret-position="-61">
+          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SetTests/DealTests.swift">
+    <entry file="file://$PROJECT_DIR$/Set/impl/GameImpl.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="45">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>

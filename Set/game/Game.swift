@@ -6,10 +6,8 @@ public protocol Game {
     var remainingCards: [Card] { get }
     var matchedCards: [Card] { get }
 
-    func dealAndUnselect()
+    func deal()
 
     func selectCard(at: Int)
-
-
 }
 

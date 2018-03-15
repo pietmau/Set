@@ -15,7 +15,7 @@ public class DealTests: XCTestCase {
 
     func test_deal() {
         let initialCards = game!.dealtCards
-        game!.dealAndUnselect()
+        game!.deal()
         let finalCards = game!.dealtCards
         XCTAssert(finalCards.count == initialCards.count + 3)
         XCTAssert(finalCards.count == 15)

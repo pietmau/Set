@@ -76,14 +76,14 @@ public class SetTests: XCTestCase {
     func test_selectiDuplicate() {
         selectTwocards()
         game!.selectCard(at: 1)
-        XCTAssert(game!.selectedCards.count == 2, "Expected 2 but was \(game!.selectedCards.count)")
+        XCTAssert(game!.selectedCards.count == 1, "Expected 1 but was \(game!.selectedCards.count)")
     }
 
     func test_selectionAndNotMatch() {
         selectThreeCards()
         game!.selectCard(at: 2)
         XCTAssert(game!.matchedCards.isEmpty)
-        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.remainingCards.count)")
+        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
     }
 
     func test_selectionAndMatch() {
@@ -91,8 +91,106 @@ public class SetTests: XCTestCase {
         selectThreeCards()
         game!.selectCard(at: 3)
         XCTAssert(game!.matchedCards.count == 3)
-        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.remainingCards.count)")
+        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
     }
+
+    func test_lessThanThreeAndSelect() {
+        selectTwocards()
+        game!.selectCard(at: 2)
+        XCTAssert(game!.matchedCards.count == 0)
+        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+        XCTAssert(game!.selectedCards.count == 3)
+        XCTAssert(game!.remainingCards.count == 81 - 12)
+        XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+        XCTAssert(game!.selectedCards[1] == game!.dealtCards[1])
+        XCTAssert(game!.selectedCards[2] == game!.dealtCards[2])
+    }
+
+    func test_lessThanThreeAndDeSelect() {
+        selectTwocards()
+        game!.selectCard(at: 1)
+        XCTAssert(game!.matchedCards.count == 0)
+        XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+        XCTAssert(game!.selectedCards.count == 1)
+        XCTAssert(game!.remainingCards.count == 81 - 12)
+        XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+    }
+
+
+    func test_ThreeeDSelected() {
+        itSAMatch()
+        itSNotAMatch()
+    }
+
+    private func itSNotAMatch() {
+        func selectThreeAndReSelect() {
+            setUp()
+            selectThreeCards()
+            game!.selectCard(at: 1)
+            XCTAssert(game!.matchedCards.count == 0)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 3)
+            XCTAssert(game!.remainingCards.count == 81 - 12)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+            XCTAssert(game!.selectedCards[1] == game!.dealtCards[1])
+            XCTAssert(game!.selectedCards[2] == game!.dealtCards[2])
+        }
+
+        func selectThreeAndSelectOther() {
+            setUp()
+            selectThreeCards()
+            XCTAssert(game!.matchedCards.count == 0)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 3)
+            XCTAssert(game!.remainingCards.count == 81 - 12)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+            game!.selectCard(at: 4)
+            XCTAssert(game!.matchedCards.count == 0)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 1)
+            XCTAssert(game!.remainingCards.count == 81 - 12)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[4])
+        }
+
+        selectThreeAndReSelect()
+        selectThreeAndSelectOther()
+    }
+
+    private func itSAMatch() {
+
+        func selectThreeAndReSelect() {
+            game = GameImpl(matcher: Positivematcher())
+            selectThreeCards()
+            game!.selectCard(at: 1)
+            XCTAssert(game!.matchedCards.count == 0)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 3)
+            XCTAssert(game!.remainingCards.count == 81 - 12)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+            XCTAssert(game!.selectedCards[1] == game!.dealtCards[1])
+            XCTAssert(game!.selectedCards[2] == game!.dealtCards[2])
+        }
+
+        func selectThreeAndSelectOther() {
+            game = GameImpl(matcher: Positivematcher())
+            selectThreeCards()
+            XCTAssert(game!.matchedCards.count == 0)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 3)
+            XCTAssert(game!.remainingCards.count == 81 - 12)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[0])
+            game!.selectCard(at: 4)
+            XCTAssert(game!.matchedCards.count == 3)
+            XCTAssert(game!.dealtCards.count == 12, "Expected \(12) but  was \(game!.dealtCards.count)")
+            XCTAssert(game!.selectedCards.count == 1)
+            XCTAssert(game!.remainingCards.count == 81 - 12 - 3)
+            XCTAssert(game!.selectedCards[0] == game!.dealtCards[4])
+        }
+
+        selectThreeAndReSelect()
+        selectThreeAndSelectOther()
+    }
+
 
     private func selectTwocards() {
         game!.selectCard(at: 0)
