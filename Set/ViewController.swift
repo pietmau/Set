@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var cards: [UIButton]!
-    
-    @IBOutlet weak var deal: UIButton!
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         

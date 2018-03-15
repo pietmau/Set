@@ -11,18 +11,17 @@ public class GameImpl: Game {
     init(matcher: Matcher) {
         self.matcher = matcher
         remainingCards = Card.createAll()
-        deal()
-        deal()
-        deal()
-        deal()
+        for _ in 1...4 {
+            dealAndUnselect()
+        }
     }
 
-    public func deal() {
-        addCards()
+    public func dealAndUnselect() {
+        deal()
         unselctCards()
     }
 
-    private func addCards() {
+    private func deal() {
         if var toBeDealt = getThreeCards() {
             for index in dealtCards.indices {
                 if (toBeDealt.isEmpty) {
@@ -54,6 +53,7 @@ public class GameImpl: Game {
     private func clearAndDeal(card: Card) {
         matchedCards.append(contentsOf: selectedCards)
         clearIfNeededAndAppend(card: card)
+        deal()
     }
 
     private func isAMatch() -> Bool {
@@ -65,7 +65,8 @@ public class GameImpl: Game {
             return
         }
         let card: Card = dealtCards[at]!
-        if alreadySelected(element: card) {
+        if selectedCards.contains(card) {
+            onCardAlreadySelected(card)
             return
         }
         if (isAMatch()) {
@@ -75,13 +76,14 @@ public class GameImpl: Game {
         }
     }
 
-    private func alreadySelected(element: Card) -> Bool {
-        return selectedCards.contains(element)
+    private func onCardAlreadySelected(_ card: Card) {
+
     }
+
 
     private func clearIfNeededAndAppend(card: Card) {
         if (moreThanThreeSelected()) {
-            selectedCards.removeAll()
+            unselctCards()
         }
         selectedCards.append(card)
     }
@@ -90,6 +92,4 @@ public class GameImpl: Game {
         return selectedCards.count >= 3
     }
 
-    class InvalidRange: Error {
-    }
 }

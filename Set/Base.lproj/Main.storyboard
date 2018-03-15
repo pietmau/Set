@@ -14,7 +14,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Set" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -139,14 +138,6 @@
                                     <constraint firstAttribute="height" constant="300" id="twq-3i-nj8"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-M2-DOw">
-                                <rect key="frame" x="164" y="581" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Deal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.097391537089999994" green="1" blue="0.14825816419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -157,7 +148,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="deal" destination="Fc3-M2-DOw" id="NFD-uG-Ewu"/>
                         <outletCollection property="cards" destination="I9C-9F-MvZ" collectionClass="NSMutableArray" id="0om-iO-62y"/>
                         <outletCollection property="cards" destination="4QL-OU-Qr1" collectionClass="NSMutableArray" id="xUu-Kc-7me"/>
                         <outletCollection property="cards" destination="jjb-NN-HdN" collectionClass="NSMutableArray" id="hFW-xj-G6B"/>
@@ -184,6 +174,7 @@
                         <outletCollection property="cards" destination="pVV-Kg-Dwq" collectionClass="NSMutableArray" id="IAQ-Kc-xvA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
