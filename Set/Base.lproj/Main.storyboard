@@ -138,9 +138,19 @@
                                     <constraint firstAttribute="height" constant="300" id="twq-3i-nj8"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCD-L6-cDP">
+                                <rect key="frame" x="172" y="589" width="31" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Deal"/>
+                                <connections>
+                                    <action selector="onDealClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUg-JT-X2C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.097391537089999994" green="1" blue="0.14825816419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TCD-L6-cDP" secondAttribute="bottom" constant="48" id="5I3-s5-zPM"/>
+                            <constraint firstItem="TCD-L6-cDP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ajZ-y3-irm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWx-Yp-lW8" secondAttribute="trailing" id="oUQ-sq-FQ1"/>
                             <constraint firstItem="CWx-Yp-lW8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uTL-nW-yph"/>
                             <constraint firstItem="CWx-Yp-lW8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x1O-nL-xky"/>

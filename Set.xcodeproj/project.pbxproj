@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39672266FC5E75FBE2103F5F /* CardRendererImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967219474552CD870109AA8 /* CardRendererImpl.swift */; };
 		396722D31AC064482074754E /* DealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672FC2849C2143E6311A8C /* DealTests.swift */; };
 		3967233C8C915FDCDF6F1EC9 /* Positivematcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672492679FC89243810F33 /* Positivematcher.swift */; };
 		39672476EB747F92190351AC /* NegativeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672AD83B77AD8CFC92F04E /* NegativeMatcher.swift */; };
@@ -15,6 +16,7 @@
 		3967278CC92EC4F3CFB6F06D /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672FC51AB81A825273DEC4 /* Matcher.swift */; };
 		396727FE52960CB1B3385FF1 /* MatcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672D66F4A5CB9913FFC5BE /* MatcherTest.swift */; };
 		39672864EA873539B03B2E83 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3967224BFB78B1A50D87B68E /* SetTests.swift */; };
+		396729C9E1E5B19BC8A994A5 /* CardRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396724D350203B437065230B /* CardRenderer.swift */; };
 		39672B585C54A975E6E632EA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39672B547EA1844F911AC74E /* Card.swift */; };
 		39672E3F52DB597C41A8432D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396724DBF2492C645E89CAFE /* Game.swift */; };
 		9CDBF9D12058005C009CED08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDBF9D02058005C009CED08 /* AppDelegate.swift */; };
@@ -35,8 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3967219474552CD870109AA8 /* CardRendererImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRendererImpl.swift; sourceTree = "<group>"; };
 		3967224BFB78B1A50D87B68E /* SetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		39672492679FC89243810F33 /* Positivematcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Positivematcher.swift; sourceTree = "<group>"; };
+		396724D350203B437065230B /* CardRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRenderer.swift; sourceTree = "<group>"; };
 		396724DBF2492C645E89CAFE /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		396726B6D40A8369D43741A0 /* MatcherImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatcherImpl.swift; sourceTree = "<group>"; };
 		39672AD83B77AD8CFC92F04E /* NegativeMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegativeMatcher.swift; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 			path = SetTests;
 			sourceTree = "<group>";
 		};
+		9C9D3702205C1BAF00E2C4C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				396724D350203B437065230B /* CardRenderer.swift */,
+				3967219474552CD870109AA8 /* CardRendererImpl.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9CDBF9C42058005C009CED08 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		9CDBF9CF2058005C009CED08 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D3702205C1BAF00E2C4C9 /* View */,
 				9C9D36F320596D4200E2C4C9 /* impl */,
 				9CDBF9E2205827CE009CED08 /* game */,
 				9CDBF9D02058005C009CED08 /* AppDelegate.swift */,
@@ -261,6 +275,8 @@
 				396724AD42AEA829B5489783 /* MatcherImpl.swift in Sources */,
 				3967233C8C915FDCDF6F1EC9 /* Positivematcher.swift in Sources */,
 				39672476EB747F92190351AC /* NegativeMatcher.swift in Sources */,
+				396729C9E1E5B19BC8A994A5 /* CardRenderer.swift in Sources */,
+				39672266FC5E75FBE2103F5F /* CardRendererImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

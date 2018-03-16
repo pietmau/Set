@@ -25,7 +25,7 @@ class MatcherImpl: Matcher {
         let numbers = cards.map { card in
             card.shading
         }
-        let set = Set<Shape>(numbers)
+        let set = Set<Shading>(numbers)
         return (set.count == 3 || set.count == 1)
     }
 
