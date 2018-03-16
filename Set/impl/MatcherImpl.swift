@@ -3,6 +3,9 @@ import Foundation
 class MatcherImpl: Matcher {
 
     func isAMatch(cards: [Card]) -> Bool {
-        fatalError()
+        if (cards.count != 3) {
+            return false
+        }
+        return true
     }
 }
