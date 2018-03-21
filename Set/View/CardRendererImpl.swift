@@ -8,7 +8,27 @@ class CardRendererImpl: CardRenderer {
             render(button: cards[i], card: dealtCard[i])
         }
         for i in dealtCard.count..<cards.count {
-              hideCardContents(cards[i])
+            hideCardContents(cards[i])
+        }
+    }
+
+    func setCardsSelected(_ buttons: [UIButton]!, _ dealtCards: [Card?], _ selectedCards: [Card]) {
+        for i in 0..<dealtCards.count {
+            if (dealtCards[i] != nil && selectedCards.contains(dealtCards[i]!)) {
+                setSelected(buttons[i], true)
+            } else {
+                setSelected(buttons[i], false)
+            }
+        }
+    }
+
+    private func setSelected(_ button: UIButton, _ selected: Bool) {
+        if (selected) {
+            button.layer.borderWidth = 3.0
+            button.layer.borderColor = UIColor.blue.cgColor
+            button.layer.cornerRadius = 8.0
+        } else {
+            button.layer.borderWidth = 0.0
         }
     }
 

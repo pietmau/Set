@@ -7,6 +7,12 @@ public class GameImpl: Game {
     public var matchedCards: [Card] = []
     private let matcher: Matcher
 
+    public var canDeal: Bool {
+        get {
+            return remainingCards.count >= 3
+        }
+    }
+
     init(matcher: Matcher) {
         self.matcher = matcher
         remainingCards = Card.createAll()
@@ -36,11 +42,13 @@ public class GameImpl: Game {
     }
 
     private func getThreeCards() -> [Card?]? {
-        var result: [Card] = []
-        for _ in 1...3 {
-            let rand = Int(arc4random_uniform(UInt32(remainingCards.count)))
-            let card = remainingCards.remove(at: rand)
-            result.append(card)
+        var result: [Card?] = [nil, nil, nil]
+        if (canDeal) {
+            for i in 0...2 {
+                let rand = Int(arc4random_uniform(UInt32(remainingCards.count)))
+                let card = remainingCards.remove(at: rand)
+                result[i] = card
+            }
         }
         return result
     }
@@ -60,10 +68,10 @@ public class GameImpl: Game {
     }
 
     public func selectCard(at: Int) {
-        if (at < 0 && at >= dealtCards.count) {
+        if (at < 0 || at >= dealtCards.count) {
             return
         }
-        let card: Card = dealtCards[at]!
+        let card: Card? = dealtCards[at]
 
         if (selectedCards.count == 3) {
             isAMatchOrNot(card: card)

@@ -1,21 +1,22 @@
-//
-//  ViewController.swift
-//  Set
-//
-//  Created by Maurizio Pietrantuono on 13/03/2018.
-//  Copyright © 2018 Maurizio Pietrantuono. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-    var game: Game = GameImpl(matcher: MatcherImpl())
+    var game: Game = GameImpl(matcher: Positivematcher())
     let renderer: CardRenderer = CardRendererImpl()
 
     @IBOutlet var cards: [UIButton]!
 
-    @IBAction func onDealClicked(_ sender: Any) {
+    @IBOutlet weak var dealButton: UIButton!
 
+    @IBAction func onDealClicked(_ sender: Any) {
+        game.deal()
+        updateView()
+    }
+
+    @IBAction func onButtoClicked(_ sender: UIButton) {
+        let index = cards.index(of: sender)!
+        game.selectCard(at: index)
+        updateView()
     }
 
     override func viewDidLoad() {
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
 
     private func updateView() {
         renderer.renderCards(cards, game.dealtCards)
+        renderer.setCardsSelected(cards, game.dealtCards, game.selectedCards)
+        dealButton.isEnabled = game.dealtCards.count < cards.count && game.canDeal
     }
 
 }
