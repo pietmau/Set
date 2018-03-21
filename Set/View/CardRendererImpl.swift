@@ -7,9 +7,10 @@ class CardRendererImpl: CardRenderer {
         for i in 0..<dealtCard.count {
             render(button: cards[i], card: dealtCard[i])
         }
-
+        for i in dealtCard.count..<cards.count {
+              hideCardContents(cards[i])
+        }
     }
-
 
     private func render(button: UIButton, card: Card?) {
         if let card = card {
@@ -20,26 +21,55 @@ class CardRendererImpl: CardRenderer {
     }
 
     private func hideCardContents(_ button: UIButton) {
+        button.setTitle("", for: .normal)
+    }
 
+    private func getAttributed(card: Card) -> NSAttributedString {
+        let attrs: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.strokeColor: getColor(card),
+            NSAttributedStringKey.strokeWidth: getStroke(card),
+            NSAttributedStringKey.foregroundColor: getColor(card).withAlphaComponent(getAlpha(card)),
+        ]
+        return NSAttributedString(string: getTitle(card), attributes: attrs)
+    }
+
+    private func getAlpha(_ card: Card) -> CGFloat {
+        switch (card.shading) {
+        case Shading.FIRST:
+            return 1
+        case Shading.SECOND:
+            return 1
+        case Shading.THIRD:
+            return 0.40
+        }
+    }
+
+    private func getStroke(_ card: Card) -> Int {
+        switch (card.shading) {
+        case Shading.FIRST:
+            return 5
+        case Shading.SECOND:
+            return -5
+        case Shading.THIRD:
+            return 0
+        }
     }
 
     private func renderCard(button: UIButton, card: Card) {
-        button.setTitle(getTitle(card), for: .normal)
-        let color = getColor(card)
-        button.setTitleColor(color, for: .normal)
+        let attributedString: NSAttributedString = getAttributed(card: card)
+        button.setAttributedTitle(attributedString, for: .normal)
     }
 
+
     private func getColor(_ card: Card) -> UIColor {
-        if (card.shape == Shape.FIRST) {
+        switch (card.color) {
+        case Color.FIRST:
             return .blue
-        }
-        if (card.shape == Shape.SECOND) {
+        case Color.SECOND:
             return .magenta
-        }
-        if (card.shape == Shape.THIRD) {
+        case Color.THIRD:
             return .yellow
         }
-        fatalError("Cannot get here")
     }
 
     private func getTitle(_ card: Card) -> String {
@@ -52,15 +82,13 @@ class CardRendererImpl: CardRenderer {
     }
 
     private func getSymbol(_ card: Card) -> String {
-        if (card.shape == Shape.FIRST) {
+        switch (card.shape) {
+        case Shape.FIRST:
             return "■"
-        }
-        if (card.shape == Shape.SECOND) {
+        case Shape.SECOND:
             return "▲"
-        }
-        if (card.shape == Shape.THIRD) {
+        case Shape.THIRD:
             return "●"
         }
-        fatalError("Cannot get here")
     }
 }
